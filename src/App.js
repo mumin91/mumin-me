@@ -1,10 +1,14 @@
-import './App.css';
+import './index.css';
 
 function App() {
     return (
-        <div className="container">
-            Muminur Rahman
-        </div>
+        <Router>
+          <Switch>
+            {routes.map((route, i) => (
+              <RouteWithSubRoutes key={i} {...route} />
+            ))}
+          </Switch>
+      </Router>
     );
 }
 
