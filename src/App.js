@@ -1,14 +1,16 @@
-import './index.css';
+import React from 'react';
+import {routes} from "./routes";
+import {Route, Switch} from "react-router-dom";
+import Topbar from "./components/Topbar";
 
 function App() {
     return (
-        <Router>
-          <Switch>
-            {routes.map((route, i) => (
-              <RouteWithSubRoutes key={i} {...route} />
-            ))}
-          </Switch>
-      </Router>
+        <React.Fragment>
+            <Topbar/>
+            <Switch>
+                {routes.map((route, i) => (<Route exect path={route.path} component={route.component} key={i}/>))}
+            </Switch>
+        </React.Fragment>
     );
 }
 
