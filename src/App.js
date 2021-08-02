@@ -1,10 +1,17 @@
-import './App.css';
+import React from 'react';
+
+
+import {routes} from "./routes";
+
+import {Route, Switch,} from "react-router-dom";
 
 function App() {
     return (
-        <div className="container">
-            Muminur Rahman
-        </div>
+        <Switch>
+            {routes.map((route, i) => (
+                <Route exact path={route.path} component={route.component} key={i}/>
+            ))}
+        </Switch>
     );
 }
 
