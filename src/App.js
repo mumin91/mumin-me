@@ -1,17 +1,25 @@
-import React from 'react';
-import {routes} from "./routes";
-import {Route, Switch} from "react-router-dom";
-import Topbar from "./components/Topbar";
+import logo from './logo.svg';
+import './App.css';
 
 function App() {
-    return (
-        <React.Fragment>
-            <Topbar/>
-            <Switch>
-                {routes.map((route, i) => (<Route exect path={route.path} component={route.component} key={i}/>))}
-            </Switch>
-        </React.Fragment>
-    );
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
 export default App;
