@@ -7,19 +7,24 @@ const Example = (props) => {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <div>
-            <Navbar color="light" light expand="md">
-                <NavbarBrand href="/">My project</NavbarBrand>
+        <React.Fragment>
+            <Navbar className="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+                <div className="container px-4 px-lg-5">
+                <NavbarBrand href="/">Home</NavbarBrand>
                 <NavbarToggler onClick={toggle}/>
                 <Collapse isOpen={isOpen} navbar>
                     <Nav className="mr-auto" navbar>
                         <NavItem>
-                            <NavLink href="/">Home</NavLink>
+                            <NavLink href="/">Blogs</NavLink>
+                        </NavItem>
+                        <NavItem>
+                            <NavLink href="/">Contact</NavLink>
                         </NavItem>
                     </Nav>
                 </Collapse>
+                </div>
             </Navbar>
-        </div>
+        </React.Fragment>
     );
 }
 
